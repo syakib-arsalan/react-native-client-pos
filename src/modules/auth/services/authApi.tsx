@@ -1,11 +1,11 @@
-import apiClient from "../../../core/network/api/apiClient";
+import apiClient from '../../../core/network/api/ApiClient';
 
 export async function login(payload: string) {
-    return apiClient.post(`/auth/login/${payload}`);
+  return apiClient.post(`/auth/login/${payload}`);
 }
 export async function logout() {
-    return apiClient.post(`/auth/logout`);
+  return apiClient.post(`/auth/logout`);
 }
 export async function me() {
-    return apiClient.get(`/auth/me`);
+  return apiClient.get(`/auth/me`);
 }
