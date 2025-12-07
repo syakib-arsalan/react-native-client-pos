@@ -3,8 +3,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Alert } from 'react-native';
 
 const apiClient = axios.create({
-  baseURL: 'http://laravel-pos.test/api',
-  timeout: 15000,
+  baseURL: 'https://mesodermic-undemurring-kendrick.ngrok-free.dev/api',
+  timeout: 5000,
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',
@@ -33,7 +33,7 @@ apiClient.interceptors.response.use(
       const { status, data } = error.response;
       switch (status) {
         case 401:
-          AsyncStorage.removeItem('authToken');
+          AsyncStorage.removeItem('token');
           Alert.alert('Sesi Berakhir', 'Silakan login kembali.');
           break;
         case 403:
